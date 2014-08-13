@@ -1,5 +1,6 @@
 package cn.mingweihao.MolecularDynamics.client;
 
+import cn.mingweihao.MolecularDynamics.MolecularDynamics;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
@@ -14,6 +15,6 @@ public class HtmlLauncher extends GwtApplication {
 
         @Override
         public ApplicationListener getApplicationListener () {
-                return new MyGdxGame();
+                return new MolecularDynamics();
         }
 }
