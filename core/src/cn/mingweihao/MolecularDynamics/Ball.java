@@ -1,7 +1,10 @@
 package cn.mingweihao.MolecularDynamics;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
+
+
 
 /**
  * Created by kklt92 on 11/08/2014.
@@ -42,6 +45,7 @@ public class Ball {
         accel.y = force.y / mass;
         accel.scl(deltaTime);
 
+
         vel.add(accel.x, accel.y);
 
         vel.scl(deltaTime);
@@ -58,14 +62,25 @@ public class Ball {
         // easy force calculate.
         double f = 4 * wellDepth * (12 * Math.pow(poDistance, 12) / Math.pow(distance, 13)
                 - 6 * Math.pow(poDistance, 6) / Math.pow(distance, 7));
-        force.x = 5;
-        force.y = 1;
+        force.x = (float)((Math.random()-0.5) * 10);
+        force.y = (float)((Math.random()-0.5) * 10);
     }
 
     private void tryMove() {
         pos.x += vel.x;
         pos.y += vel.y;
 
+        if(pos.x > Gdx.graphics.getWidth()) {
+            pos.x = pos.x - Gdx.graphics.getWidth();
+        } else if(pos.x < 0) {
+            pos.x = Gdx.graphics.getWidth() + pos.x;
+        }
+
+        if(pos.y > Gdx.graphics.getHeight()) {
+            pos.y = pos.y - Gdx.graphics.getHeight();
+        } else if(pos.y < 0) {
+            pos.y = Gdx.graphics.getHeight() + pos.y;
+        }
 
 
     }
