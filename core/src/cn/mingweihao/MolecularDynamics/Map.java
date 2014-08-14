@@ -2,6 +2,7 @@ package cn.mingweihao.MolecularDynamics;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 
 
@@ -14,14 +15,16 @@ public class Map {
 
     public Rectangle outbounds = new Rectangle();
     public Array<Ball> balls = new Array<Ball>();
+    public Array<Vector2> ballPos = new Array<Vector2>();
+    public Array<Vector2> ballVel = new Array<Vector2>();
 
     public Map() {
         load();
     }
 
     private void load() {
-        for(int i = 0; i < 20; i++) {
-            Ball ball = new Ball(this, (float)(Math.random() * 600), (float)(Math.random() * 200));
+        for(int i = 0; i < 100; i++) {
+            Ball ball = new Ball(this, (float)(Math.random() * 800), (float)(Math.random() * 480));
             balls.add(ball);
         }
 
@@ -30,11 +33,11 @@ public class Map {
     public void update(float deltaTime) {
         for(int i = 0; i < balls.size; i++) {
             balls.get(i).update(deltaTime);
-            withScreen();
+
         }
     }
 
-    private void withScreen() {
 
-    }
+
+
 }

@@ -30,7 +30,7 @@ public class MolecularDynamics extends Game {
     }
 
     public void dispose() {
-        batch.dispose();
+        //batch.dispose();
     }
 
 }

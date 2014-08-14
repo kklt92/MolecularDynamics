@@ -39,25 +39,29 @@ public class MainScreen implements Screen {
 
 	@Override
 	public void render (float delta) {
-        delta = Math.min(0.06f, Gdx.graphics.getDeltaTime());
+
+
+      //  delta = Math.min(0.06f, Gdx.graphics.getDeltaTime());
+        delta = 0.06f;
         map.update(delta);
-		Gdx.gl.glClearColor(0, 0, 0, 1);
+
+		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
         for(int i = 0; i < map.balls.size; i++) {
-            game.batch.draw(ballImage, map.balls.get(i).pos.x, map.balls.get(i).pos.y, 20f, 20f);
+            game.batch.draw(ballImage, map.balls.get(i).pos.x - 10, map.balls.get(i).pos.y - 10, 20f, 20f);
         }
         game.batch.end();
+
 
 	}
 
     public void dispose() {
 
     }
-
 
     public void resume() {
 
@@ -66,6 +70,7 @@ public class MainScreen implements Screen {
     public void pause() {
 
     }
+
 
     public void resize(int width, int height) {
 
