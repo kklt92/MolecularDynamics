@@ -27,7 +27,7 @@ public class MainScreen implements Screen {
         ballImage = new Texture(Gdx.files.internal("XeMolecular.png"));
 
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 600, 480);
+        camera.setToOrtho(false, 800, 480);
 
     }
 	

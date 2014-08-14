@@ -5,7 +5,7 @@ import org.robovm.apple.uikit.UIApplication;
 
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
-import cn.mingweihao.MolecularDynamics.MyGdxGame;
+import cn.mingweihao.MolecularDynamics.MolecularDynamics;
 
 public class IOSLauncher extends IOSApplication.Delegate {
     @Override

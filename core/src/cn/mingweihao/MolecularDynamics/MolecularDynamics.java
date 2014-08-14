@@ -1,6 +1,7 @@
 package cn.mingweihao.MolecularDynamics;
 
-import android.util.Log;
+
+
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -20,7 +21,8 @@ public class MolecularDynamics extends Game {
         batch = new SpriteBatch();
         setScreen(new MainScreen(this));
 
-        Log.i(TAG, "Screen Width is " + Gdx.graphics.getWidth());
+        Gdx.app.log("ScreenSize", "The Screen Size is " + Gdx.graphics.getHeight() + " * " + Gdx.graphics.getWidth());
+
     }
 
     public void render() {

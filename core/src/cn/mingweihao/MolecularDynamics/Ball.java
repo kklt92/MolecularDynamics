@@ -70,16 +70,16 @@ public class Ball {
         pos.x += vel.x;
         pos.y += vel.y;
 
-        if(pos.x > Gdx.graphics.getWidth()) {
-            pos.x = pos.x - Gdx.graphics.getWidth();
+        if(pos.x > 800) {
+            pos.x = pos.x - 800;
         } else if(pos.x < 0) {
-            pos.x = Gdx.graphics.getWidth() + pos.x;
+            pos.x = 800 + pos.x;
         }
 
-        if(pos.y > Gdx.graphics.getHeight()) {
-            pos.y = pos.y - Gdx.graphics.getHeight();
+        if(pos.y > 480) {
+            pos.y = pos.y - 480;
         } else if(pos.y < 0) {
-            pos.y = Gdx.graphics.getHeight() + pos.y;
+            pos.y = 480 + pos.y;
         }
 
 

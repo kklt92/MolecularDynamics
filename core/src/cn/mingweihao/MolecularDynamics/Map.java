@@ -21,7 +21,7 @@ public class Map {
 
     private void load() {
         for(int i = 0; i < 20; i++) {
-            Ball ball = new Ball(this, (float)(600), (float)(Math.random() * 200));
+            Ball ball = new Ball(this, (float)(Math.random() * 600), (float)(Math.random() * 200));
             balls.add(ball);
         }
 
