@@ -40,9 +40,9 @@ public class MainScreen implements Screen {
 	@Override
 	public void render (float delta) {
 
-
-      //  delta = Math.min(0.06f, Gdx.graphics.getDeltaTime());
-        delta = 0.06f;
+        // Debug: Resume from sleeping the DeltaTime will be 0.
+        delta = Math.min(0.01f, Gdx.graphics.getDeltaTime());
+        if(delta == 0)  delta = 0.06f;
         map.update(delta);
 
 		Gdx.gl.glClearColor(1, 1, 1, 1);

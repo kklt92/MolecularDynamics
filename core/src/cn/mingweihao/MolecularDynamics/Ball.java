@@ -11,11 +11,11 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class Ball {
 
-    public float mass = 0.001f;
+    public float mass = 0.0001f;
 
     double potential;
-    double wellDepth = 2;
-    double poDistance = 5;
+    double wellDepth = 1.77;
+    double poDistance = 4.1;
     double distance;
 
     int counter;
@@ -41,12 +41,13 @@ public class Ball {
     }
 
     public void update(float deltaTime) {
-        potentialForce();
+//        potentialForce();
 
 
         accel.x = force.x / mass;
         accel.y = force.y / mass;
         accel.scl(deltaTime);
+
 
 
         vel.add(accel.x, accel.y);
@@ -77,11 +78,8 @@ public class Ball {
                 double f = 4 * wellDepth * (12 * Math.pow(poDistance, 12) / Math.pow(distance, 13)
                                  - 6 * Math.pow(poDistance, 6) / Math.pow(distance, 7));
 
-
-
-
-                           force.x = force.x + (float)(f * (map.balls.get(i).pos.x - this.pos.x) / distance);
-                           force.y = force.y + (float)(f * (map.balls.get(i).pos.y - this.pos.y) / distance);
+                force.x = force.x + (float)(f * (map.balls.get(i).pos.x - this.pos.x) / distance);
+                force.y = force.y + (float)(f * (map.balls.get(i).pos.y - this.pos.y) / distance);
             }
 
         }
@@ -90,6 +88,7 @@ public class Ball {
     }
 
     private void tryMove() {
+
         pos.x += vel.x;
         pos.y += vel.y;
 
